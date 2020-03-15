@@ -1,0 +1,2 @@
+https://www.kaggle.com/dgomonov/new-york-city-airbnb-open-data
+New York data has limited amount of columns which may not be enough for our project.
