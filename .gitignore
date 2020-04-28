@@ -40,3 +40,8 @@ Thumbs.db
 # Datasets #
 ######################
 data/*
+
+# Temp Files #
+######################
+text_analysis/dcct84_data_wrangling_1.ipynb
+text_analysis/dcct84_data_wrangling_2.ipynb
