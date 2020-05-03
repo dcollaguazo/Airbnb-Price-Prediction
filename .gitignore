@@ -26,7 +26,6 @@
 *.sqlite
 *.csv
 *.geojson
-*.dtsx
 
 # OS generated files #
 ######################
