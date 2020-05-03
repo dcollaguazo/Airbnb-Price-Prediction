@@ -1,0 +1,2683 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/3/2020 1:38:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="UIS-SD-1VJQQP2"
+  DTS:CreatorName="GEORGETOWN\mk1464"
+  DTS:DTSID="{353E66B2-AAA0-46E7-85F1-8F5B38A9BED1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Export_Selected"
+  DTS:PackageType="5"
+  DTS:VersionBuild="2"
+  DTS:VersionGUID="{9437C0E0-AEB4-4AE3-B4B7-D5CCF9624262}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[bi-db-dev.Sandbox]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4E5CE26D-CA4F-4CEC-BADC-DA95B96E7F8A}"
+      DTS:ObjectName="bi-db-dev.Sandbox">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=bi-db-dev;Initial Catalog=Sandbox;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[selected_columns_listing]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{676A4622-8442-4EF2-8A69-A74E2E25139D}"
+      DTS:ObjectName="selected_columns_listing">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\mk1464\Desktop\airbnb\selected_columns_listings.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{FFBA737A-2D51-4DC5-856E-3483FB983202}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="20"
+              DTS:TextQualified="True"
+              DTS:ObjectName="scrape_id"
+              DTS:DTSID="{3B79E2C4-BBC4-4501-BE0B-A184439978CF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="name"
+              DTS:DTSID="{3151D0E9-3E18-40E2-8F06-F615E4E62F36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="picture_url"
+              DTS:DTSID="{DF91BC41-4B6C-4074-AC6C-971F62DB1D82}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="host_id"
+              DTS:DTSID="{F3DA3EE7-8C2F-4982-8925-559A780F0347}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="host_since"
+              DTS:DTSID="{49723AF3-0218-4A79-BEA9-ABA0FAEFA56F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="host_response_time"
+              DTS:DTSID="{F23ADCB6-2213-431B-9774-F71D6D067B66}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="host_response_rate"
+              DTS:DTSID="{F6B6C000-0176-45FF-9372-5250EEAF6FB6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="host_acceptance_rate"
+              DTS:DTSID="{0CDF9C22-4CCD-4149-B23D-5A76F90B8126}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="host_is_superhost"
+              DTS:DTSID="{869ED241-7EDA-48A2-BEF1-9F641E7432B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="host_neighbourhood"
+              DTS:DTSID="{4BEDC462-5610-4F13-905D-D1B9D7C4B653}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="host_listings_count"
+              DTS:DTSID="{27BC8C1A-AB58-4AC2-BFCD-C2B0CA9BAEBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="host_verifications"
+              DTS:DTSID="{9B39ECED-D41E-4DBF-B1E2-F342901BB29F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="host_has_profile_pic"
+              DTS:DTSID="{7A6D920C-FE01-4CC1-8ED9-301DBBB7B333}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="host_identity_verified"
+              DTS:DTSID="{0284819A-CF61-4C90-871A-785AC5C0970E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="street"
+              DTS:DTSID="{B7722C3E-0FB2-48DD-8BE8-96A1997D454E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="neighbourhood"
+              DTS:DTSID="{CF098758-DC89-4C95-8639-6558CF81D8DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="neighbourhood_cleansed"
+              DTS:DTSID="{7BA858FF-83D1-4CF3-9586-0BEBE50F0A5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="calc_neighbourhod_listing_is_wrong"
+              DTS:DTSID="{D72CA72D-F8EB-490F-A7CD-1A34A19394B8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="neighbourhood_group_cleansed"
+              DTS:DTSID="{E40CDFCF-DE08-411E-92B9-BB11EA9F197C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{CFA45005-8C5B-468B-8476-E48FE03E90E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="state"
+              DTS:DTSID="{B78468E4-355E-45A5-A68A-041DC8F2FAE7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="zipcode"
+              DTS:DTSID="{C5B7DA9A-19D1-4ADA-B420-45CCD9CBE741}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="latitude"
+              DTS:DTSID="{686343FF-08D1-4AD9-8BF8-FEC90461267A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="longitude"
+              DTS:DTSID="{C96DD87B-5EB4-4BAB-BF5C-407EEEFC67E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="is_location_exact"
+              DTS:DTSID="{74284ED7-6396-4683-B4BD-F02C71030F0A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="property_type"
+              DTS:DTSID="{09179AFD-7133-44FB-9663-7B28B9112727}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="room_type"
+              DTS:DTSID="{179E537F-126D-49A2-B601-647FB9F691CA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="accommodates"
+              DTS:DTSID="{27056724-F3D6-489C-8898-6CEEC3CB7E1C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="3"
+              DTS:DataScale="1"
+              DTS:TextQualified="True"
+              DTS:ObjectName="bathrooms"
+              DTS:DTSID="{0FBBFD42-34A2-4B9D-A219-528CAAD0E94F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="bedrooms"
+              DTS:DTSID="{F0EED898-D0A0-4530-97AB-E525A12451A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="beds"
+              DTS:DTSID="{91B9E756-96BE-446C-AF43-042BE002D153}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="bed_type"
+              DTS:DTSID="{62B9C940-337A-44FC-86BD-D16AE16525EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="amenities"
+              DTS:DTSID="{C638E5E0-6FC7-495E-B88B-E9F9D27DCD79}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="8"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="price"
+              DTS:DTSID="{1A8A0462-D98F-400D-9AE9-63879D198521}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="8"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="security_deposit"
+              DTS:DTSID="{DFE8F2BF-793C-462A-8A44-F10821DF7C3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="8"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cleaning_fee"
+              DTS:DTSID="{4B4BC2BC-EBD5-4A30-8940-91F218D9BDC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="guests_included"
+              DTS:DTSID="{54D2F18C-B444-445D-9120-F069FC567D68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="5"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="extra_people"
+              DTS:DTSID="{4197BFD6-8661-4A31-A835-AA78655A4EE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="minimum_nights"
+              DTS:DTSID="{158FEFEE-51A6-4F7D-BE2B-7B5FE76B2928}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="maximum_nights"
+              DTS:DTSID="{C2C58C6D-723A-44AB-8164-D69458140633}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="calendar_updated"
+              DTS:DTSID="{730C592A-B6DE-49E2-8777-3C6875095B7F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="number_of_reviews"
+              DTS:DTSID="{0FCD1642-B14C-441C-9042-7B08961AD734}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="number_of_reviews_ltm"
+              DTS:DTSID="{335692C7-1F52-4634-BD95-ECB781BFC487}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_review"
+              DTS:DTSID="{0FB2D440-C67A-439B-AFA8-08116275C217}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_review"
+              DTS:DTSID="{60DBC36F-DA6D-4A75-81AD-35B0640C025C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_scores_rating"
+              DTS:DTSID="{D84E6D82-B045-4676-BB17-E51108C7D711}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_scores_accuracy"
+              DTS:DTSID="{3DE082F3-3D1F-4157-BE91-D096F94E9452}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_scores_cleanliness"
+              DTS:DTSID="{D6F94528-CEB6-4C54-AE1F-BDC88232F562}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_scores_checkin"
+              DTS:DTSID="{96D53168-70C1-41DD-ABAB-1853E0CE91B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_scores_communication"
+              DTS:DTSID="{058F0EB6-80F3-415E-8E90-76570D817A44}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_scores_location"
+              DTS:DTSID="{61EB7AD1-CDDE-4028-BB17-7F30E001C7E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="review_scores_value"
+              DTS:DTSID="{63F265BC-0ED3-4BEE-A0EB-1A5BD1A82CBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="instant_bookable"
+              DTS:DTSID="{A8E8305E-4D14-4C2D-B884-C9FD6D14164F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cancellation_policy"
+              DTS:DTSID="{6DD6E868-FBBF-4550-A5B7-02A0595EFF60}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="4"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="reviews_per_month"
+              DTS:DTSID="{D64D471C-9DF8-4D58-9DBC-AF05C4BB0745}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Export to csv"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{47BFEF4C-9898-4EF8-AC9B-22ABE77DCD93}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Export to csv"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Export to csv\ABB_Listing_Selected table"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ABB_Listing_Selected table"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ABB_Listing_Selected]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export to csv\ABB_Listing_Selected table.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[bi-db-dev.Sandbox]"
+                  connectionManagerRefId="Package.ConnectionManagers[bi-db-dev.Sandbox]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[scrape_id]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[scrape_id]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[scrape_id]"
+                      name="scrape_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      length="200"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[name]"
+                      name="name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[picture_url]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[picture_url]"
+                      length="200"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[picture_url]"
+                      name="picture_url"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_id]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_id]"
+                      name="host_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_since]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_since]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_since]"
+                      name="host_since"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_response_time]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_response_time]"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_response_time]"
+                      name="host_response_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_response_rate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_response_rate]"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_response_rate]"
+                      name="host_response_rate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_acceptance_rate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_acceptance_rate]"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_acceptance_rate]"
+                      name="host_acceptance_rate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_is_superhost]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_is_superhost]"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_is_superhost]"
+                      name="host_is_superhost"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_neighbourhood]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_neighbourhood]"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_neighbourhood]"
+                      name="host_neighbourhood"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_listings_count]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_listings_count]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_listings_count]"
+                      name="host_listings_count"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_verifications]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_verifications]"
+                      length="200"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_verifications]"
+                      name="host_verifications"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_has_profile_pic]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_has_profile_pic]"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_has_profile_pic]"
+                      name="host_has_profile_pic"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_identity_verified]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_identity_verified]"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_identity_verified]"
+                      name="host_identity_verified"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[street]"
+                      length="100"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[street]"
+                      name="street"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[neighbourhood]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[neighbourhood]"
+                      length="100"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[neighbourhood]"
+                      name="neighbourhood"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[neighbourhood_cleansed]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[neighbourhood_cleansed]"
+                      length="100"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[neighbourhood_cleansed]"
+                      name="neighbourhood_cleansed"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[calc_neighbourhod_listing_is_wrong]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[calc_neighbourhod_listing_is_wrong]"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[calc_neighbourhod_listing_is_wrong]"
+                      name="calc_neighbourhod_listing_is_wrong"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[neighbourhood_group_cleansed]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[neighbourhood_group_cleansed]"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[neighbourhood_group_cleansed]"
+                      name="neighbourhood_group_cleansed"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[state]"
+                      length="10"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[state]"
+                      name="state"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[zipcode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[zipcode]"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[zipcode]"
+                      name="zipcode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[latitude]"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[latitude]"
+                      name="latitude"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[longitude]"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[longitude]"
+                      name="longitude"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[is_location_exact]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[is_location_exact]"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[is_location_exact]"
+                      name="is_location_exact"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[property_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[property_type]"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[property_type]"
+                      name="property_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[room_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[room_type]"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[room_type]"
+                      name="room_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[accommodates]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[accommodates]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[accommodates]"
+                      name="accommodates"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[bathrooms]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[bathrooms]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[bathrooms]"
+                      name="bathrooms"
+                      precision="3"
+                      scale="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[bedrooms]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[bedrooms]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[bedrooms]"
+                      name="bedrooms"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[beds]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[beds]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[beds]"
+                      name="beds"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[bed_type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[bed_type]"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[bed_type]"
+                      name="bed_type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[amenities]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[amenities]"
+                      length="2000"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[amenities]"
+                      name="amenities"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[price]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[price]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[price]"
+                      name="price"
+                      precision="8"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[security_deposit]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[security_deposit]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[security_deposit]"
+                      name="security_deposit"
+                      precision="8"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[cleaning_fee]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[cleaning_fee]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[cleaning_fee]"
+                      name="cleaning_fee"
+                      precision="8"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[guests_included]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[guests_included]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[guests_included]"
+                      name="guests_included"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[extra_people]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[extra_people]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[extra_people]"
+                      name="extra_people"
+                      precision="5"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[minimum_nights]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[minimum_nights]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[minimum_nights]"
+                      name="minimum_nights"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[maximum_nights]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[maximum_nights]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[maximum_nights]"
+                      name="maximum_nights"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[calendar_updated]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[calendar_updated]"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[calendar_updated]"
+                      name="calendar_updated"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[number_of_reviews]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[number_of_reviews]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[number_of_reviews]"
+                      name="number_of_reviews"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[number_of_reviews_ltm]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[number_of_reviews_ltm]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[number_of_reviews_ltm]"
+                      name="number_of_reviews_ltm"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[first_review]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[first_review]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[first_review]"
+                      name="first_review"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[last_review]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[last_review]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[last_review]"
+                      name="last_review"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_rating]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_rating]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_rating]"
+                      name="review_scores_rating"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_accuracy]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_accuracy]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_accuracy]"
+                      name="review_scores_accuracy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_cleanliness]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_cleanliness]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_cleanliness]"
+                      name="review_scores_cleanliness"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_checkin]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_checkin]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_checkin]"
+                      name="review_scores_checkin"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_communication]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_communication]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_communication]"
+                      name="review_scores_communication"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_location]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_location]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_location]"
+                      name="review_scores_location"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_value]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_value]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_value]"
+                      name="review_scores_value"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[instant_bookable]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[instant_bookable]"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[instant_bookable]"
+                      name="instant_bookable"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[cancellation_policy]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[cancellation_policy]"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[cancellation_policy]"
+                      name="cancellation_policy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[reviews_per_month]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[reviews_per_month]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[reviews_per_month]"
+                      name="reviews_per_month"
+                      precision="4"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[scrape_id]"
+                      dataType="i8"
+                      name="scrape_id" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[picture_url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="picture_url" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_id]"
+                      dataType="i4"
+                      name="host_id" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_since]"
+                      dataType="dbDate"
+                      name="host_since" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_response_time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="host_response_time" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_response_rate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="host_response_rate" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_acceptance_rate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="host_acceptance_rate" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_is_superhost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="host_is_superhost" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_neighbourhood]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="host_neighbourhood" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_listings_count]"
+                      dataType="i4"
+                      name="host_listings_count" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_verifications]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="host_verifications" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_has_profile_pic]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="host_has_profile_pic" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[host_identity_verified]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="host_identity_verified" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="street" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[neighbourhood]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="neighbourhood" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[neighbourhood_cleansed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="neighbourhood_cleansed" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[calc_neighbourhod_listing_is_wrong]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="calc_neighbourhod_listing_is_wrong" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[neighbourhood_group_cleansed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="neighbourhood_group_cleansed" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[zipcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="zipcode" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[is_location_exact]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="is_location_exact" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[property_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="property_type" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[room_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="room_type" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[accommodates]"
+                      dataType="i4"
+                      name="accommodates" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[bathrooms]"
+                      dataType="numeric"
+                      name="bathrooms"
+                      precision="3"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[bedrooms]"
+                      dataType="i4"
+                      name="bedrooms" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[beds]"
+                      dataType="i4"
+                      name="beds" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[bed_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="bed_type" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[amenities]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2000"
+                      name="amenities" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[price]"
+                      dataType="numeric"
+                      name="price"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[security_deposit]"
+                      dataType="numeric"
+                      name="security_deposit"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[cleaning_fee]"
+                      dataType="numeric"
+                      name="cleaning_fee"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[guests_included]"
+                      dataType="i2"
+                      name="guests_included" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[extra_people]"
+                      dataType="numeric"
+                      name="extra_people"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[minimum_nights]"
+                      dataType="i4"
+                      name="minimum_nights" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[maximum_nights]"
+                      dataType="i4"
+                      name="maximum_nights" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[calendar_updated]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="calendar_updated" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[number_of_reviews]"
+                      dataType="i4"
+                      name="number_of_reviews" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[number_of_reviews_ltm]"
+                      dataType="i4"
+                      name="number_of_reviews_ltm" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[first_review]"
+                      dataType="dbDate"
+                      name="first_review" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[last_review]"
+                      dataType="dbDate"
+                      name="last_review" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_rating]"
+                      dataType="i4"
+                      name="review_scores_rating" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_accuracy]"
+                      dataType="i4"
+                      name="review_scores_accuracy" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_cleanliness]"
+                      dataType="i4"
+                      name="review_scores_cleanliness" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_checkin]"
+                      dataType="i4"
+                      name="review_scores_checkin" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_communication]"
+                      dataType="i4"
+                      name="review_scores_communication" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_location]"
+                      dataType="i4"
+                      name="review_scores_location" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[review_scores_value]"
+                      dataType="i4"
+                      name="review_scores_value" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[instant_bookable]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="instant_bookable" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[cancellation_policy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cancellation_policy" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].ExternalColumns[reviews_per_month]"
+                      dataType="numeric"
+                      name="reviews_per_month"
+                      precision="4"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[id]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[id]"
+                      name="id" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[scrape_id]"
+                      dataType="i8"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[scrape_id]"
+                      name="scrape_id" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[name]"
+                      name="name" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[picture_url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[picture_url]"
+                      name="picture_url" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_id]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_id]"
+                      name="host_id" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_since]"
+                      dataType="dbDate"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_since]"
+                      name="host_since" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_response_time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_response_time]"
+                      name="host_response_time" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_response_rate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_response_rate]"
+                      name="host_response_rate" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_acceptance_rate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_acceptance_rate]"
+                      name="host_acceptance_rate" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_is_superhost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_is_superhost]"
+                      name="host_is_superhost" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_neighbourhood]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_neighbourhood]"
+                      name="host_neighbourhood" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_listings_count]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_listings_count]"
+                      name="host_listings_count" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_verifications]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_verifications]"
+                      name="host_verifications" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_has_profile_pic]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_has_profile_pic]"
+                      name="host_has_profile_pic" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_identity_verified]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[host_identity_verified]"
+                      name="host_identity_verified" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[street]"
+                      name="street" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[neighbourhood]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[neighbourhood]"
+                      name="neighbourhood" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[neighbourhood_cleansed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[neighbourhood_cleansed]"
+                      name="neighbourhood_cleansed" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[calc_neighbourhod_listing_is_wrong]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[calc_neighbourhod_listing_is_wrong]"
+                      name="calc_neighbourhod_listing_is_wrong" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[neighbourhood_group_cleansed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[neighbourhood_group_cleansed]"
+                      name="neighbourhood_group_cleansed" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[city]"
+                      name="city" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[state]"
+                      name="state" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[zipcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[zipcode]"
+                      name="zipcode" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[latitude]"
+                      name="latitude" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[longitude]"
+                      name="longitude" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[is_location_exact]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[is_location_exact]"
+                      name="is_location_exact" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[property_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[property_type]"
+                      name="property_type" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[room_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[room_type]"
+                      name="room_type" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[accommodates]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[accommodates]"
+                      name="accommodates" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[bathrooms]"
+                      dataType="numeric"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[bathrooms]"
+                      name="bathrooms"
+                      precision="3"
+                      scale="1" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[bedrooms]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[bedrooms]"
+                      name="bedrooms" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[beds]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[beds]"
+                      name="beds" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[bed_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[bed_type]"
+                      name="bed_type" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[amenities]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2000"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[amenities]"
+                      name="amenities" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[price]"
+                      dataType="numeric"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[price]"
+                      name="price"
+                      precision="8"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[security_deposit]"
+                      dataType="numeric"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[security_deposit]"
+                      name="security_deposit"
+                      precision="8"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[cleaning_fee]"
+                      dataType="numeric"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[cleaning_fee]"
+                      name="cleaning_fee"
+                      precision="8"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[guests_included]"
+                      dataType="i2"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[guests_included]"
+                      name="guests_included" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[extra_people]"
+                      dataType="numeric"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[extra_people]"
+                      name="extra_people"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[minimum_nights]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[minimum_nights]"
+                      name="minimum_nights" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[maximum_nights]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[maximum_nights]"
+                      name="maximum_nights" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[calendar_updated]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[calendar_updated]"
+                      name="calendar_updated" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[number_of_reviews]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[number_of_reviews]"
+                      name="number_of_reviews" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[number_of_reviews_ltm]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[number_of_reviews_ltm]"
+                      name="number_of_reviews_ltm" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[first_review]"
+                      dataType="dbDate"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[first_review]"
+                      name="first_review" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[last_review]"
+                      dataType="dbDate"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[last_review]"
+                      name="last_review" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_rating]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_rating]"
+                      name="review_scores_rating" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_accuracy]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_accuracy]"
+                      name="review_scores_accuracy" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_cleanliness]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_cleanliness]"
+                      name="review_scores_cleanliness" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_checkin]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_checkin]"
+                      name="review_scores_checkin" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_communication]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_communication]"
+                      name="review_scores_communication" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_location]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_location]"
+                      name="review_scores_location" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_value]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[review_scores_value]"
+                      name="review_scores_value" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[instant_bookable]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[instant_bookable]"
+                      name="instant_bookable" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[cancellation_policy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[cancellation_policy]"
+                      name="cancellation_policy" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[reviews_per_month]"
+                      dataType="numeric"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[reviews_per_month]"
+                      name="reviews_per_month"
+                      precision="4"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Export to csv\new listing csv"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="new listing csv">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export to csv\new listing csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[selected_columns_listing]"
+                  connectionManagerRefId="Package.ConnectionManagers[selected_columns_listing]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[id]"
+                      cachedDataType="i4"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[scrape_id]"
+                      cachedDataType="i8"
+                      cachedName="scrape_id"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[scrape_id]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[scrape_id]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="name"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[name]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[name]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[picture_url]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="picture_url"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[picture_url]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[picture_url]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[host_id]"
+                      cachedDataType="i4"
+                      cachedName="host_id"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_id]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_id]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[host_since]"
+                      cachedDataType="dbDate"
+                      cachedName="host_since"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_since]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_since]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[host_response_time]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="host_response_time"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_response_time]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_response_time]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[host_response_rate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="host_response_rate"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_response_rate]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_response_rate]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[host_acceptance_rate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="host_acceptance_rate"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_acceptance_rate]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_acceptance_rate]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[host_is_superhost]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="host_is_superhost"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_is_superhost]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_is_superhost]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[host_neighbourhood]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="host_neighbourhood"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_neighbourhood]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_neighbourhood]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[host_listings_count]"
+                      cachedDataType="i4"
+                      cachedName="host_listings_count"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_listings_count]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_listings_count]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[host_verifications]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="host_verifications"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_verifications]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_verifications]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[host_has_profile_pic]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="host_has_profile_pic"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_has_profile_pic]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_has_profile_pic]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[host_identity_verified]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="host_identity_verified"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_identity_verified]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[host_identity_verified]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[street]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="street"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[street]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[street]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[neighbourhood]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="neighbourhood"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[neighbourhood]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[neighbourhood]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[neighbourhood_cleansed]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="neighbourhood_cleansed"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[neighbourhood_cleansed]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[neighbourhood_cleansed]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[calc_neighbourhod_listing_is_wrong]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="calc_neighbourhod_listing_is_wrong"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[calc_neighbourhod_listing_is_wrong]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[calc_neighbourhod_listing_is_wrong]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[neighbourhood_group_cleansed]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="neighbourhood_group_cleansed"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[neighbourhood_group_cleansed]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[neighbourhood_group_cleansed]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[state]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="state"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[state]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[zipcode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="zipcode"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[zipcode]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[zipcode]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[latitude]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="latitude"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[latitude]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[latitude]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[longitude]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="longitude"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[longitude]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[longitude]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[is_location_exact]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="is_location_exact"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[is_location_exact]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[is_location_exact]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[property_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="property_type"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[property_type]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[property_type]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[room_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="room_type"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[room_type]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[room_type]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[accommodates]"
+                      cachedDataType="i4"
+                      cachedName="accommodates"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[accommodates]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[accommodates]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[bathrooms]"
+                      cachedDataType="numeric"
+                      cachedName="bathrooms"
+                      cachedPrecision="3"
+                      cachedScale="1"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[bathrooms]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[bathrooms]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[bedrooms]"
+                      cachedDataType="i4"
+                      cachedName="bedrooms"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[bedrooms]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[bedrooms]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[beds]"
+                      cachedDataType="i4"
+                      cachedName="beds"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[beds]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[beds]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[bed_type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="bed_type"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[bed_type]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[bed_type]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[amenities]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2000"
+                      cachedName="amenities"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[amenities]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[amenities]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[price]"
+                      cachedDataType="numeric"
+                      cachedName="price"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[price]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[price]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[security_deposit]"
+                      cachedDataType="numeric"
+                      cachedName="security_deposit"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[security_deposit]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[security_deposit]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[cleaning_fee]"
+                      cachedDataType="numeric"
+                      cachedName="cleaning_fee"
+                      cachedPrecision="8"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[cleaning_fee]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[cleaning_fee]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[guests_included]"
+                      cachedDataType="i2"
+                      cachedName="guests_included"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[guests_included]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[guests_included]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[extra_people]"
+                      cachedDataType="numeric"
+                      cachedName="extra_people"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[extra_people]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[extra_people]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[minimum_nights]"
+                      cachedDataType="i4"
+                      cachedName="minimum_nights"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[minimum_nights]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[minimum_nights]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[maximum_nights]"
+                      cachedDataType="i4"
+                      cachedName="maximum_nights"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[maximum_nights]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[maximum_nights]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[calendar_updated]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="calendar_updated"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[calendar_updated]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[calendar_updated]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[number_of_reviews]"
+                      cachedDataType="i4"
+                      cachedName="number_of_reviews"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[number_of_reviews]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[number_of_reviews]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[number_of_reviews_ltm]"
+                      cachedDataType="i4"
+                      cachedName="number_of_reviews_ltm"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[number_of_reviews_ltm]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[number_of_reviews_ltm]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[first_review]"
+                      cachedDataType="dbDate"
+                      cachedName="first_review"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[first_review]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[first_review]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[last_review]"
+                      cachedDataType="dbDate"
+                      cachedName="last_review"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[last_review]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[last_review]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[review_scores_rating]"
+                      cachedDataType="i4"
+                      cachedName="review_scores_rating"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_rating]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_rating]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[review_scores_accuracy]"
+                      cachedDataType="i4"
+                      cachedName="review_scores_accuracy"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_accuracy]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_accuracy]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[review_scores_cleanliness]"
+                      cachedDataType="i4"
+                      cachedName="review_scores_cleanliness"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_cleanliness]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_cleanliness]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[review_scores_checkin]"
+                      cachedDataType="i4"
+                      cachedName="review_scores_checkin"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_checkin]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_checkin]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[review_scores_communication]"
+                      cachedDataType="i4"
+                      cachedName="review_scores_communication"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_communication]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_communication]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[review_scores_location]"
+                      cachedDataType="i4"
+                      cachedName="review_scores_location"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_location]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_location]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[review_scores_value]"
+                      cachedDataType="i4"
+                      cachedName="review_scores_value"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_value]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[review_scores_value]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[instant_bookable]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="instant_bookable"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[instant_bookable]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[instant_bookable]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[cancellation_policy]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cancellation_policy"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[cancellation_policy]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[cancellation_policy]" />
+                    <inputColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].Columns[reviews_per_month]"
+                      cachedDataType="numeric"
+                      cachedName="reviews_per_month"
+                      cachedPrecision="4"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[reviews_per_month]"
+                      lineageId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output].Columns[reviews_per_month]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[scrape_id]"
+                      dataType="i8"
+                      name="scrape_id" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="name" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[picture_url]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="picture_url" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_id]"
+                      dataType="i4"
+                      name="host_id" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_since]"
+                      dataType="dbDate"
+                      name="host_since" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_response_time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="host_response_time" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_response_rate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="host_response_rate" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_acceptance_rate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="host_acceptance_rate" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_is_superhost]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="host_is_superhost" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_neighbourhood]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="host_neighbourhood" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_listings_count]"
+                      dataType="i4"
+                      name="host_listings_count" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_verifications]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="host_verifications" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_has_profile_pic]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="host_has_profile_pic" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[host_identity_verified]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="host_identity_verified" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="street" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[neighbourhood]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="neighbourhood" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[neighbourhood_cleansed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="neighbourhood_cleansed" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[calc_neighbourhod_listing_is_wrong]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="calc_neighbourhod_listing_is_wrong" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[neighbourhood_group_cleansed]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="neighbourhood_group_cleansed" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[zipcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="zipcode" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[latitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[longitude]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[is_location_exact]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="is_location_exact" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[property_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="property_type" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[room_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="room_type" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[accommodates]"
+                      dataType="i4"
+                      name="accommodates" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[bathrooms]"
+                      dataType="numeric"
+                      name="bathrooms"
+                      precision="3"
+                      scale="1" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[bedrooms]"
+                      dataType="i4"
+                      name="bedrooms" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[beds]"
+                      dataType="i4"
+                      name="beds" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[bed_type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="bed_type" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[amenities]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2000"
+                      name="amenities" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[price]"
+                      dataType="numeric"
+                      name="price"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[security_deposit]"
+                      dataType="numeric"
+                      name="security_deposit"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[cleaning_fee]"
+                      dataType="numeric"
+                      name="cleaning_fee"
+                      precision="8"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[guests_included]"
+                      dataType="i2"
+                      name="guests_included" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[extra_people]"
+                      dataType="numeric"
+                      name="extra_people"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[minimum_nights]"
+                      dataType="i4"
+                      name="minimum_nights" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[maximum_nights]"
+                      dataType="i4"
+                      name="maximum_nights" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[calendar_updated]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="calendar_updated" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[number_of_reviews]"
+                      dataType="i4"
+                      name="number_of_reviews" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[number_of_reviews_ltm]"
+                      dataType="i4"
+                      name="number_of_reviews_ltm" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[first_review]"
+                      dataType="dbDate"
+                      name="first_review" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[last_review]"
+                      dataType="dbDate"
+                      name="last_review" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_rating]"
+                      dataType="i4"
+                      name="review_scores_rating" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_accuracy]"
+                      dataType="i4"
+                      name="review_scores_accuracy" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_cleanliness]"
+                      dataType="i4"
+                      name="review_scores_cleanliness" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_checkin]"
+                      dataType="i4"
+                      name="review_scores_checkin" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_communication]"
+                      dataType="i4"
+                      name="review_scores_communication" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_location]"
+                      dataType="i4"
+                      name="review_scores_location" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[review_scores_value]"
+                      dataType="i4"
+                      name="review_scores_value" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[instant_bookable]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="instant_bookable" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[cancellation_policy]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cancellation_policy" />
+                    <externalMetadataColumn
+                      refId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input].ExternalColumns[reviews_per_month]"
+                      dataType="numeric"
+                      name="reviews_per_month"
+                      precision="4"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Export to csv.Paths[OLE DB Source Output]"
+              endId="Package\Export to csv\new listing csv.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Export to csv\ABB_Listing_Selected table.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Export to csv"
+          TopLeft="105,142" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Export to csv">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Export to csv\ABB_Listing_Selected table"
+          TopLeft="86,75" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Export to csv\new listing csv"
+          TopLeft="131,243" />
+        <EdgeLayout
+          Id="Package\Export to csv.Paths[OLE DB Source Output]"
+          TopLeft="189,117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="16,126"
+              Start="0,0"
+              End="16,118.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,59"
+                    Point2="0,63"
+                    Point3="4,63" />
+                  <mssgle:LineSegment
+                    End="12,63" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12,63"
+                    Point2="16,63"
+                    Point3="16,67" />
+                  <mssgle:LineSegment
+                    End="16,118.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Export to csv\ABB_Listing_Selected table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
