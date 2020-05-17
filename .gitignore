@@ -44,6 +44,8 @@ data/*
 
 # Temp Files #
 ######################
-text_analysis/.ipynb_checkpoints
-variable_exploration/.ipynb_checkpoints
-variable_exploration/dc/.ipynb_checkpoints
+.ipynb_checkpoints
+
+# Config #
+##########
+variable_exploration/dc/config.json
