@@ -18,9 +18,13 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="property_type" placeholder="Property Type" required="required" />
-        <input type="text" name="room_type" placeholder="Room Type" required="required" />
-		<input type="text" name="location" placeholder="Location" required="required" />
+      <input type="text" name="room_type_entire" placeholder="Are you renting an entire home? (enter 1 for yes, 0 fo no)" required="required" />
+      <input type="text" name="bathrooms" placeholder="Number of bathrooms" required="required" />
+      <input type="text" name="manhattan" placeholder="Is this in Manhattan? (enter 1 for yes, 0 fo no)" required="required" />
+      <input type="text" name="cleaning_fee" placeholder="Cleaning Fee ($)" required="required" />
+      <input type="text" name="bedrooms" placeholder="Number of bedrooms" required="required" />
+      <input type="text" name="accommodates" placeholder="How many people will it accommodates?" required="required" />
+      <input type="text" name="security_deposit" placeholder="Security Deposit ($)" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Show Me the Money</button>
     </form>
