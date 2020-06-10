@@ -47,4 +47,7 @@ data/*
 variable_exploration/dc/data/*
 .ipynb_checkpoints/*
 text_analysis/.ipynb_checkpoints/
-
+.gitignore.swp
+1_Ingestion_Wrangling/.ipynb_checkpoints/
+2_Model_Building/.ipynb_checkpoints/
+variable_exploration/dc/.ipynb_checkpoints/
