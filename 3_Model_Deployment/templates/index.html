@@ -19,8 +19,31 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
-      <input type="text" name="room_type_entire" placeholder="Are you renting an entire home? (enter 1 for yes, 0 fo no)" required="required" />
-      <input type="text" name="manhattan" placeholder="Is this in Manhattan? (enter 1 for yes, 0 fo no)" required="required" />
+    <table>
+	    <tr>
+		      <td style="text-align:left;">
+		      	Are you renting an entire home?
+		      </td>
+		      <td>
+				  <select name= "room_type_entire" method="GET" action="/">
+						<option value= 1 SELECTED> Yes </option>
+						<option value= 0 >No</option>
+				  </select>
+			  </td>
+		</tr>
+
+	    <tr>
+		      <td style="text-align:left;">
+		      	Is this in Manhattan?
+		      </td>
+		      <td>
+			  	  <select name= "manhattan" method="GET" action="/">
+						<option value= 1 SELECTED> Yes </option>
+						<option value= 0 >No</option>
+				  </select>
+			  </td>
+		</tr>
+	</table>
       <input type="text" name="accommodates" placeholder="How many people will it accommodates?" required="required" />
       <input type="text" name="bedrooms" placeholder="Number of bedrooms" required="required" />
       <input type="text" name="bathrooms" placeholder="Number of bathrooms" required="required" />
@@ -32,7 +55,13 @@
 
    <br>
    <br>
-   {{ prediction_text }}
+   	<div style="text-align:left;">Suggested Listing Price is: ${{ prediction_text }}</div>
+   	<div style="text-align:left;">Entire Home: {{ home_yn }}</div>
+   	<div style="text-align:left;">In Manhatten: {{ manhattan_yn }}</div>
+   	<div style="text-align:left;">Accomidations: {{ accomidation }}</div>
+   	<div style="text-align:left;">Number of Bedrooms: {{ bedrooms }}</div>
+   	<div style="text-align:left;">Number of Bathrooms: {{ bathrooms }}</div>
+   	<div style="text-align:left;">Total Guests: {{ guests_included }}</div>
 
  </div>
 
